@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>Я хочу получить</h1>
+    <input type="text" placeholder=" Введите ваше желание"><br>
+    {% for product in wishlist.product.all %}
+        <a href="{{product.link}}">{{product.title}}</a>
+    {% endfor %}
+{% endblock %}

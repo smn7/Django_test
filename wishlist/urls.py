@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from main.views import index
+from main.models import WishList
+
+from main.views import index, about, list_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index_page')
+    path('', index, name='index_page'),
+    path('about/', about, name='about_page'),
+    path('list_page/<int:pk>/', list_page, name='list_page')
 ]
